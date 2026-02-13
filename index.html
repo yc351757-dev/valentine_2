@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine ❤️</title>
+
+<style>
+body{
+    margin:0;
+    background:black;
+    font-family:Arial;
+    text-align:center;
+    color:white;
+    overflow:hidden;
+}
+
+.card{
+    padding:20px;
+    margin-top:40px;
+}
+
+img{
+    width:75%;
+    max-width:260px;
+    border-radius:50%;
+    border:4px solid red;
+    margin-top:20px;
+}
+
+button{
+    margin-top:20px;
+    padding:15px 25px;
+    border:none;
+    border-radius:30px;
+    background:red;
+    color:white;
+    font-size:18px;
+}
+
+#surprise{
+    margin-top:20px;
+    font-size:18px;
+    color:pink;
+}
+
+.heart{
+    position:fixed;
+    bottom:-10px;
+    font-size:20px;
+    color:red;
+    animation:float 5s linear infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);opacity:1;}
+    100%{transform:translateY(-100vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>Happy Valentine Darling ❤️</h1>
+<h2>Yash ❤️ Tari</h2>
+
+<!-- 🔥 PHOTO LINK YAHA PASTE KARNA -->
+<img src="tari.jpg" alt="Tari">
+
+<p>Walaupun kita jauh 🌍<br> hatiku selalu sama kamu❤️</p>
+
+<button onclick="startLove()">Tap Here 💖</button>
+
+<p id="surprise"></p>
+</div>
+
+<!-- 🔥 MUSIC LINK YAHA PASTE KARNA -->
+<audio id="music" src="love_me_like_you_do.mp3" loop></audio>
+
+<script>
+function startLove(){
+    var song=document.getElementById("music");
+    song.play();
+
+    document.getElementById("surprise").innerHTML=
+    "Kamu selamanya buat aku ❤️ Aku sayang banget sama kamu, Tari. 💕";
+}
+
+function createHeart(){
+    var heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    document.body.appendChild(heart);
+    setTimeout(function(){heart.remove();},5000);
+}
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
